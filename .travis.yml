@@ -1,13 +1,18 @@
 language: node_js
-
 node_js:
-  - "10.14.2"
-
-script:
-  - echo "Deploy"
-
+  - 10.14.2
 install:
   - npm install -g firebase-tools
-
 after_success:
-  - firebase deploy --token $FIREBASE_TOKEN
+  - npm i -g firebase-ci
+  - firebase-ci deploy
+branches:
+  only:
+    - master
+script:
+  - echo "Deploy"
+deploy:
+  provider: firebase
+  skip_cleanup: true
+  token:
+    secure: "1/gqgefuLKoFM96viPXxn-bYSX1I4aIwcWdXrKD6qBpPU"

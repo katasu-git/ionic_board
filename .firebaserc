@@ -1,5 +1,5 @@
 {
   "projects": {
-    "staging": $FIREBASE_PROJECT
+    "default": "ionic-board-af48e"
   }
 }
